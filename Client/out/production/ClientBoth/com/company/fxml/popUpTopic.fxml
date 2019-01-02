@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<StackPane fx:id="rootPane" stylesheets="@/com/company/css/dark-theme.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.Controllers.Controller_PopUpTopic">
+    <children>
+        <AnchorPane id="AnchorPane" fx:id="mainContainer" prefHeight="376.0" prefWidth="490.0" styleClass="custom-pane" stylesheets="@/com/company/css/dark-theme.css">
+            <children>
+                <VBox prefHeight="153.0" prefWidth="475.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="8.0">
+                    <children>
+                  <JFXComboBox fx:id="subjectPopUp" editable="true" focusColor="#4d4d4d" labelFloat="true" prefHeight="39.0" prefWidth="425.0" promptText="Choose or edit from DropDown Menu">
+                        <items>
+                            <FXCollections fx:factory="observableArrayList">
+                                <String fx:value="Data Structure" />
+                                <String fx:value="Miscellaneous" />
+                                <String fx:value="Networking" />
+                                <String fx:value="Java/C++" />
+                            </FXCollections>
+                        </items>
+                  </JFXComboBox>
+                  <HBox>
+                     <VBox.margin>
+                        <Insets left="10.0" right="10.0" top="20.0" />
+                     </VBox.margin>
+                     <children>
+                              <JFXTextField fx:id="topicPopUp" labelFloat="true" prefHeight="32.0" prefWidth="227.0" promptText="Topic for this Subject" />
+                        <JFXDatePicker fx:id="datePopUp"/>
+                     </children>
+                  </HBox>
+                  <HBox>
+                     <VBox.margin>
+                        <Insets left="10.0" right="10.0" top="20.0" />
+                     </VBox.margin>
+                     <children>
+                              <JFXTextField fx:id="noOfSinglePopUp" labelFloat="true" prefHeight="32.0" prefWidth="227.0" promptText="No. of Single Correct" />
+                        <JFXTextField fx:id="timeSinglePopUp" labelFloat="true" layoutX="10.0" layoutY="10.0" prefHeight="32.0" prefWidth="227.0" promptText="Time Limit (min)" />
+                     </children>
+                  </HBox>
+                  <HBox>
+                     <VBox.margin>
+                        <Insets left="10.0" right="10.0" top="20.0" />
+                     </VBox.margin>
+                     <children>
+                              <JFXTextField fx:id="noOfMultiplePopUp" labelFloat="true" prefHeight="32.0" prefWidth="227.0" promptText="No. of Multiple Correct" />
+                        <JFXTextField fx:id="timeMultiplePopUp" labelFloat="true" layoutX="10.0" layoutY="10.0" prefHeight="32.0" prefWidth="227.0" promptText="Time Limit (min)" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="32.0" prefWidth="306.0">
+                     <VBox.margin>
+                        <Insets left="10.0" right="10.0" top="20.0" />
+                     </VBox.margin>
+                     <children>
+                              <JFXTextField fx:id="noOfTrueFalsePopUp" labelFloat="true" prefHeight="32.0" prefWidth="227.0" promptText="No. of True / False" />
+                        <JFXTextField fx:id="timeTrueFalsePopUp" labelFloat="true" layoutX="10.0" layoutY="10.0" prefHeight="32.0" prefWidth="227.0" promptText="Time Limit (min)" />
+                     </children>
+                  </HBox>
+                        <HBox alignment="CENTER" prefHeight="47.0" prefWidth="404.0" spacing="30.0">
+                            <children>
+                                <JFXButton fx:id="saveButton" onAction="#addNewTopicForQuiz" prefHeight="66.0" prefWidth="100.0" text="Save" />
+                                <JFXButton fx:id="cancelButton" layoutX="10.0" layoutY="10.0" onAction="#cancel" prefHeight="66.0" prefWidth="100.0" text="Cancel" />
+                            </children>
+                            <VBox.margin>
+                                <Insets top="20.0" />
+                            </VBox.margin>
+                        </HBox>
+                    </children>
+                    <padding>
+                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                    </padding>
+                </VBox>
+            </children>
+        </AnchorPane>
+    </children>
+</StackPane>
